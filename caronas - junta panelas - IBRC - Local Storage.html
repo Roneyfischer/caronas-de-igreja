@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Caronas para o Junta Panelas IBRC (17/12/2023)</title>
+
+    <script src="connection.js"></script>
+  </head>
+
+  <body>
+    <h1 style="font-size: 2rem">Caronas para o Junta Panelas IBRC</h1>
+    <h3>(17/12/2023)</h3>
+
+    <!-- Popup para oferecer carona -->
+    <div class="popup" id="oferecerCaronaPopup">
+      <h2>Oferecer carona!</h2>
+      <span class="closeButton" onclick="fecharPopup('oferecerCaronaPopup')"
+        >&times;</span
+      >
+      <label for="nomeMotorista">Nome do Motorista:</label>
+      <input type="text" id="nomeMotorista" name="nomeMotorista" required />
+
+      <label for="celularMotorista">Número do Celular do Motorista:</label>
+      <input
+        type="text"
+        id="celularMotorista"
+        name="celularMotorista"
+        required
+      />
+
+      <button type="button" onclick="confirmarOfertaCarona()">
+        Confirmar Oferta de Carona
+      </button>
+    </div>
+
+    <!-- Popup para o formulário de pedido de carona -->
+    <div class="popup" id="pedidoCaronaPopup">
+      <span class="closeButton" onclick="fecharPopup('pedidoCaronaPopup')"
+        >&times;</span
+      >
+      <h2>Formulário para Pedir Carona</h2>
+      <form id="pedirCaronaForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="numVagas">Número de Vagas necessárias:</label>
+        <input type="text" id="numVagas" name="numVagas" required />
+
+        <label for="bairroResidencia">Bairro de Residência:</label>
+        <input
+          type="text"
+          id="bairroResidencia"
+          name="bairroResidencia"
+          required
+        />
+
+        <label for="cidadeResidencia">Cidade de Residência:</label>
+        <input
+          type="text"
+          id="cidadeResidencia"
+          name="cidadeResidencia"
+          required
+        />
+
+        <label for="celular">Número de Celular:</label>
+        <input type="text" id="celular" name="celular" required />
+
+        <button type="button" class="buttonSpam"  onclick="pedirCarona()">Pedir Carona</button>
+      </form>
+    </div>
+
+    <button type="button" id="pedirCarona" onclick="abrirPopupPedidoCarona()">
+      Pedir Carona
+    </button>
+
+    <div class="instrucoes">
+      1. Para pedir carona, basta clicar em "pedir carona" e preencher o
+      formulário;
+      <br />
+      2. As pessoas sem carona estão em verde na lista; <br />
+      3. Para oferecer carona basta clicar sobre o nome da pessoa que deseja
+      levar no seu carro <br />
+    </div>
+
+    <hr />
+
+    <!-- Botão para ver caronas -->
+    <!--<button type="button" onclick="verCaronas()">Ver Caronas</button> -->
+    <!-- Tabela para exibir caronas -->
+    <table id="caronasTable">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Pessoas</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>Celular</th>
+          <th>Motorista</th>
+          <th>Celular do motorista</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      verCaronas();
+    </script>
+  </body>
+</html>

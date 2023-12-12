@@ -1,0 +1,178 @@
+/* Estilos comuns */
+.semMotorista {
+  background-color: rgb(131, 210, 131);
+}
+
+.comMotorista {
+  background-color: rgb(212, 212, 212);
+}
+
+body {
+  padding-top: 5vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-size: xx-large;
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  align-content: center;
+}
+table tr:hover {
+  transform: scaleX(1.02);
+  background-color: white;
+  border: #333 solid 2px;
+}
+
+table thead tr:hover {
+  transform: scaleX(1);
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  font-size: larger;
+  text-align: left;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  margin: 0;
+}
+
+thead tr {
+  cursor: default;
+}
+
+/* Botão para fechar a popup */
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button {
+  height: 10vh;
+  width: 15vw;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  margin: 1rem;
+  background-color: #3498db; /* Azul agradável */
+  color: white;
+}
+
+.buttonSpam {
+  height: 5vh;
+  width: 5vw;
+  margin: 1rem;
+  background-color: red;
+}
+
+#pedirCarona {
+  background-color: #3498db; /* Azul agradável */
+  color: white;
+  cursor: pointer;
+}
+
+#pedirCarona:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.instrucoes {
+  margin: 1rem;
+  text-align: left;
+  width: 100vw;
+}
+
+/* Estilos para tornar a popup responsiva */
+.popup {
+  display: none;
+  position: fixed;
+
+  width: 20vw; /* Alterado para 80% da largura da tela em PCs */
+
+  height: min-content;
+  min-width: min-content;
+
+  top: 50%;
+  left: 50%;
+  padding: 2rem;
+  transform: translate(-50%, -50%);
+  background-color: #ecf0f1; /* Cinza claro */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.popup label,
+.popup input,
+.popup button {
+  width: 100%; /* Faz os elementos dentro da popup ocuparem 100% da largura */
+  box-sizing: border-box; /* Garante que padding e bordas não aumentem a largura total */
+  padding: 0.5rem; /* Adicionado um pequeno espaçamento interno */
+  margin: 0.5rem; /* Adicionado um pequeno espaçamento externo */
+}
+
+/* Consulta de mídia para dispositivos menores */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduza o tamanho da fonte geral */
+  }
+
+  table {
+    width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+    align-content: center;
+  }
+  th,
+  td,
+  tr {
+    border: 0.2vw solid #ddd;
+    padding: 1vw;
+    margin: 0;
+    max-width: min-content;
+    text-align: left;
+    font-size: xx-small;
+    padding: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    max-width: min-content;
+    text-align: left;
+    margin: 1rem;
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 1.5em; /* Ajusta o tamanho da fonte do h1 para telas menores */
+  }
+
+  table {
+    font-size: 0.8em; /* Ajusta o tamanho da fonte da tabela para telas menores */
+  }
+
+  button {
+    width: 60vw; /* Faz o botão ocupar 90% da largura em telas menores */
+  }
+
+  .popup {
+    width: 60vw; /* Alterado para 90% da largura da tela em dispositivos menores */
+    height: min-content; /* Ajuste da altura para uma melhor aparência em telas menores */
+  }
+}
